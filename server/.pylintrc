@@ -1,0 +1,13 @@
+[MASTER]
+disable=
+    missing-module-docstring,
+    missing-class-docstring,
+    missing-function-docstring,
+    attribute-defined-outside-init,
+    E1101,
+    unspecified-encoding,
+    logging-fstring-interpolation,
+    global-statement,
+    too-few-public-methods,
+    global-variable-not-assigned,
+    invalid-name
