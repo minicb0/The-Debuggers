@@ -1,2 +1,35 @@
-[tool.pycln]
-all = true
+[tool.mypy]
+follow_imports = "skip"
+ignore_missing_imports = true
+warn_no_return = false
+warn_unused_ignores = true
+allow_untyped_globals = true
+allow_redefinition = true
+pretty = true
+check_untyped_defs = true
+exclude = 'data'
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+ignore_errors = true
+
+[tool.ruff]
+line-length = 88
+format = "grouped"
+tab-size = 4
+
+# Enable Pyflakes `E` and `F` codes by default.
+select = ["E", "F", "I001", "PT", "C4"]
+respect-gitignore = true
+
+per-file-ignores = {}
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+# Assume Python 3.11.
+target-version = "py311"
+
+
+[tool.ruff.mccabe]
+max-complexity = 10

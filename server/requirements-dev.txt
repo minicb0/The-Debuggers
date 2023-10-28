@@ -1,3 +1,4 @@
-pre-commit
-pycln
-pylint
+ruff==0.0.282
+mypy==1.4.1
+black==23.7.0
+pre-commit==3.3.3
