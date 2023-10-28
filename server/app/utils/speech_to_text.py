@@ -1,4 +1,5 @@
 import base64
+from pydub import AudioSegment
 import tempfile
 from io import BytesIO
 
@@ -7,20 +8,29 @@ from googletrans import Translator
 
 
 def base64_to_binary(base64_audio: str) -> BytesIO:
-    binary_audio_data: bytes = base64.b64decode(base64_audio)
-    audio_file_object: BytesIO = BytesIO(binary_audio_data)
+    return base64.b64decode(base64_audio)
 
-    return audio_file_object
+def convert_webm_to_wav(input_file, output_file):
+    # Load the WebM audio file
+    audio = AudioSegment.from_file(input_file, format="webm")
 
+    # Convert the audio to WAV format
+    audio.export(output_file, format="wav")
 
 def speech_to_text(audio_data_in_base64: str) -> str:
-    binary_data = base64_to_binary(audio_data_in_base64).getvalue()
+    binary_data = base64_to_binary(audio_data_in_base64)
+    print(binary_data)
 
     with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as temp_wav:
         temp_wav_filename = temp_wav.name
 
-    with open(temp_wav_filename, "wb") as audio_file:
+    with tempfile.NamedTemporaryFile(suffix=".webm", delete=False) as temp_webm:
+        temp_webm_filename = temp_webm.name
+
+    with open(temp_webm_filename, "wb") as audio_file:
         audio_file.write(binary_data)
+
+    convert_webm_to_wav(temp_webm_filename, temp_wav_filename)
 
     recognizer = sr.Recognizer()
 

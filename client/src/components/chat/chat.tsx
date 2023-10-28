@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+// import { ReactMic } from 'react-mic';
 import Typewriter from 'typewriter-effect';
 import socketIOClient from 'socket.io-client';
 import "./styles.css";
@@ -22,7 +23,7 @@ interface ChatMessage {
 const initialMessages: ChatMessage[] = [
   {
     author: 'bot',
-    body: { type: MessageType.Text, data: 'Hello' },
+    body: { type: MessageType.Text, data: 'Hello there. How can we help?' },
     timeout: 800
   }
 ];
@@ -32,7 +33,7 @@ const Message = ({ data }: { data: ChatMessage }) => {
   console.log(data);
   let finalBody;
 
-  if (Array.isArray(body)) {    
+  if (Array.isArray(body)) {
     finalBody = body.map((item, index) => (
       <React.Fragment key={index}>
         {item === "..." && (
@@ -104,10 +105,12 @@ const Chat = () => {
     socket.on('response', (response) => {
       setQuestionSubmitted(false);
       console.log(response);
-      updateMessage({ author: 'bot', body: {
-        type: MessageType.Text,
-        data: response
-      }, timeout: 1000 });
+      updateMessage({
+        author: 'bot', body: {
+          type: MessageType.Text,
+          data: response
+        }, timeout: 1000
+      });
     });
 
     // Clean up the socket connection when the component unmounts
@@ -153,17 +156,17 @@ const Chat = () => {
     }
 
     setQuestionSubmitted(true);
-    addMessage({ author: 'bot', body: {
-      type: MessageType.Text,
-      data: "..."
-    }, timeout: 1000 });
-    setTimeout(() => {
-      if (message.type == MessageType.Text) {
-        socket.emit("message", message.data);
-      } else {
-        socket.emit("voice", message.data);
-      }
-    }, 2000); // 2 seconds delay before sending the message
+    addMessage({
+      author: 'bot', body: {
+        type: MessageType.Text,
+        data: "..."
+      }, timeout: 1000
+    });
+    if (message.type == MessageType.Text) {
+      socket.emit("message", message.data);
+    } else {
+      socket.emit("voice", message.data);
+    } // 2 seconds delay before sending the message
   };
 
   const handleSubmit = (e) => {
@@ -192,6 +195,9 @@ const Chat = () => {
   }
 
   const startRecording = () => {
+    if (questionSubmitted) {
+      return;
+    }
     if (isRecording) {
       // If already recording, stop the recording
       stopRecording();
@@ -211,7 +217,7 @@ const Chat = () => {
           };
 
           mediaRecorder.current.onstop = () => {
-            const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+            const audioBlob = new Blob(audioChunks);
 
             // Convert audioBlob to base64
             const reader = new FileReader();
@@ -239,7 +245,7 @@ const Chat = () => {
               setIsRecording(false);
               // Send the audioBlob or base64Audio to your backend API
               // sendVoiceToBackend(base64Audio);
-              
+
             };
 
             reader.readAsDataURL(audioBlob);
@@ -255,6 +261,9 @@ const Chat = () => {
   };
 
   const stopRecording = () => {
+    // if(questionSubmitted) {
+    //   return;
+    // }
     if (mediaRecorder.current && mediaRecorder.current.state === 'recording') {
       mediaRecorder.current.stop();
       console.log(mediaRecorder)
@@ -284,9 +293,33 @@ const Chat = () => {
           disabled={questionSubmitted}
         />
       </form>
-      <button className='recorder' onClick={startRecording}>
-        {isRecording ? 'Stop Voice Recording' : 'Start Voice Recording'}
-      </button>
+
+      <div className='' onClick={startRecording}>
+
+        <div className="frame">
+          <input type="checkbox" name="toggle" id="record-toggle" checked={isRecording} disabled={questionSubmitted} />
+
+          <svg viewBox="0 0 100 100">
+            <circle cx="50%" cy="50%" r="45" className="circle-svg" />
+          </svg>
+
+          <div className="mic">
+            <div className="mic__head"></div>
+            <div className="mic__neck"></div>
+            <div className="mic__leg"></div>
+          </div>
+
+          <div className="recording">
+            <div className="round"></div>
+            <div className="round"></div>
+            <div className="round"></div>
+          </div>
+
+          <label for="record-toggle" className="toggle-label"></label>
+        </div>
+
+
+      </div>
     </div>
   );
 };
