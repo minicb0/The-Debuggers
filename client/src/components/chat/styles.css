@@ -57,6 +57,8 @@ body {
   margin-bottom: 1em;
 }
 
+audio::-webkit-media-controls-play-button, audio::-webkit-media-controls-panel { background-color: #00ac92; color: #a0276e; }
+
 .c-chat__list .c-chat__item--human {
   text-align: right;
 }
@@ -189,6 +191,12 @@ body {
 .typing span:nth-child(3) {
   animation-delay: 0.4s;
   margin-left: 22px;
+}
+
+/* recording  */
+
+.recorder {
+  margin-left: 350px
 }
 
 @keyframes blink {
