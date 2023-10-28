@@ -1,11 +1,10 @@
+import Chat from "../../components/chat/chat";
 import styles from "./styles.module.css";
 
 const Home = (): JSX.Element => {
 	return (
 		<>
-			<div className={styles.section} >
-				
-			</div>
+			<Chat />
 		</>
 	);
 };

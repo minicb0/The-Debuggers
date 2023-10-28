@@ -16,7 +16,7 @@ class ChatClient(Namespace):
 
     def on_message(self, message):
         self.logger.info(f"{self} sent message: {message}")
-        self.emit("response", f"Received: {message[::-1]}")
+        self.emit("response", message[::-1])
 
 
 socketio.on_namespace(ChatClient("/chat"))
