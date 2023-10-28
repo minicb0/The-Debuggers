@@ -3,3 +3,4 @@ venv
 *__pycache__*
 .ruff_cache/
 .mypy_cache/
+app/nlp_engine/pickle/*
