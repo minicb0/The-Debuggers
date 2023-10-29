@@ -17,9 +17,9 @@ Drive Link - [https://drive.google.com/drive/folders/1G2nFJJZfAxYumeBHswDUNPAl3I
 - Implements a feedback mechanism to gather user input for continuous enhancement of performance.
 
 ## Architecture
-![architecture](assets/image-2.png)
+![architecture](/assets/image-2.png)
 ---
-![data flow](assets/image-1.png)
+![data flow](/assets/image-1.png)
 
 ## Installation Guide
 

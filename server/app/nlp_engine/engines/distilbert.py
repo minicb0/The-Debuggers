@@ -30,7 +30,7 @@ logging.getLogger("haystack").setLevel(logging.INFO)
 
 doc_dir = "app/nlp_engine/data/qa_data"
 
-output_dir=doc_dir,
+output_dir = (doc_dir,)
 
 files_to_index = [doc_dir + "/" + f for f in os.listdir(doc_dir)]
 document_store = InMemoryDocumentStore(use_bm25=True)
@@ -38,7 +38,9 @@ indexing_pipeline = TextIndexingPipeline(document_store)
 indexing_pipeline.run_batch(file_paths=files_to_index)
 
 retriever = BM25Retriever(document_store=document_store)
-reader = FARMReader(model_name_or_path="distilbert-base-uncased-distilled-squad", use_gpu=True)
+reader = FARMReader(
+    model_name_or_path="distilbert-base-uncased-distilled-squad", use_gpu=True
+)
 pipe = ExtractiveQAPipeline(reader, retriever)
 
 prediction = pipe.run(

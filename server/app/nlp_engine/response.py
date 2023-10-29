@@ -1,4 +1,5 @@
 import pickle
+
 # import torch
 from haystack.pipelines import ExtractiveQAPipeline
 
@@ -31,7 +32,8 @@ def get_response(query):
 
         result = answers_as_dict_list[0]["answer"]
         return result
-    
+
+
 def get_response_roberta(query):
     with open("app/nlp_engine/pickle/roberta.pkl", "rb") as model_file:
         pipeline_components = pickle.load(model_file)

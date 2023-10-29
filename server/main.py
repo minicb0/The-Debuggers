@@ -5,10 +5,11 @@ from flask_cors import CORS
 
 from app import settings
 from app.config.db import db
+from app.controllers.feedback import feedback
 from app.socket.websocket import socketio
 
 logging.basicConfig(
-    level=logging.INFO,
+    level=logging.DEBUG,
     handlers=[
         logging.FileHandler("./logs/app.log"),
         logging.StreamHandler(),
@@ -23,6 +24,8 @@ logger = logging.getLogger()
 db.init_app(app)
 socketio.init_app(app)
 CORS(app)
+
+app.register_blueprint(feedback)
 
 
 @app.errorhandler(404)
