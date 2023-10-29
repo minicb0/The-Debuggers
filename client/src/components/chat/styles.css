@@ -7,6 +7,8 @@
 html,
 body {
   height: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 body {
@@ -18,7 +20,7 @@ body {
   width: 90%;
   margin: 0 5%;
   padding: 1em 0;
-  height: 100%;
+  height: 95%;
 }
 
 .b-chat__container {
@@ -126,7 +128,7 @@ audio::-webkit-media-controls-panel {
 
 .c-chat__form input {
   padding: 1em;
-  width: 90%;
+  width: 95%;
   border: none;
   font-family: monospace;
   border-bottom: 1px solid #fff;
@@ -407,4 +409,61 @@ audio::-webkit-media-controls-panel {
   to {
     stroke-dashoffset: 0;
   }
+}
+
+.netcon {
+  font-size: 30px;
+  color: #00ac92;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.chat-mic {
+  font-size: 30px;
+  color: #00ac92;
+  cursor: pointer;
+}
+
+.chat-mic span {
+  background-color: #00ac92 !important;
+}
+
+.chat-mic-dots {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.disclaimer {
+  margin-top: 5px;
+  color: white;
+}
+
+.helpful_response {
+  color: grey;
+  font-size: 12px;
+  margin-top: 5px;
+  float: right;
+  font-weight: 600;
+}
+
+.thumbs {
+  font-size: 15px;
+  color: grey;
+  margin-top: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.green {
+  color: #00ac92;
+}
+
+.red {
+  color: rgb(236, 67, 67);;
 }

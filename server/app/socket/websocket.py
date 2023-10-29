@@ -1,6 +1,6 @@
 import logging
 
-from flask import request
+from flask import request, jsonify
 from flask_socketio import Namespace, SocketIO
 from app.nlp_engine.response import get_response
 
@@ -23,6 +23,7 @@ class ChatClient(Namespace):
         self._logger.info(f"{self} disconnected")
 
     def on_email(self, email):
+        self._logger.info(f"{self} connected with email: {email}")
         self.email = email
 
     def on_message(self, message: str):
@@ -32,9 +33,12 @@ class ChatClient(Namespace):
         results = get_response(english)
         self._logger.info(f"response of {message}: {results}")
         response, _ = translateMessage(results, to=src)
-        chat = Chats(email=self.email, prompt=message, reply=english)
+        chat = Chats(email=self.email, prompt=message, reply=message[::-1], feedback="neutral")
         chat.save()
-        self.emit("response", response)
+        self.emit("response", jsonify({
+            "id": chat.pk,
+            "data": response
+        }))
 
     def on_voice(self, data: str):
         self._logger.info(f"{self} sent voice message")
@@ -43,9 +47,12 @@ class ChatClient(Namespace):
         english, src = translateMessage(message)
         results = get_response(english)
         response, _ = translateMessage(results, to=src)
-        self.emit("response", response)
-        chat = Chats(email=self.email, prompt=message, reply=response)
+        chat = Chats(email=self.email, prompt=message, reply=response, feedback="neutral")
         chat.save()
+        self.emit("response", jsonify({
+            "id": chat.pk,
+            "data": response
+        }))
         self._logger.info(f"{self} src: {src}, message: {message}, english: {english}, results: {results}, response: {response}")
 
 

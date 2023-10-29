@@ -17,13 +17,15 @@ interface Body {
 interface ChatMessage {
   author: string,
   body: Body,
+  id: any,
   timeout: number
 }
 
 const initialMessages: ChatMessage[] = [
   {
     author: 'bot',
-    body: { type: MessageType.Text, data: 'Hello there. How can we help?' },
+    body: { type: MessageType.Text, data: 'Hello there. Welcome to Netcon Technologies. Please enter your email to continue..' },
+    id: "",
     timeout: 800
   }
 ];
@@ -31,6 +33,19 @@ const initialMessages: ChatMessage[] = [
 const Message = ({ data }: { data: ChatMessage }) => {
   const { author, body } = data;
   console.log(data);
+
+  const handleLikes = (e) => {
+    e.target.closest('div').childNodes[1].classList.remove("red")
+    e.target.classList.add("green")
+
+    console.log(data);
+  }
+
+  const handleUnLikes = (e) => {
+    e.target.classList.add("red")
+    e.target.closest('div').childNodes[0].classList.remove("green")
+  }
+
   let finalBody;
 
   if (Array.isArray(body)) {
@@ -63,16 +78,27 @@ const Message = ({ data }: { data: ChatMessage }) => {
       } else {
         if (author === "bot") {
           finalBody = (
-            <div className="c-chat__message">
+            <><div className="c-chat__message">
               <Typewriter
                 options={{
                   strings: body.data,
                   autoStart: true,
                   delay: 5,
                   loop: false,
-                }}
-              />
+                }} />
+                <div className='helpful_response'>
+                  Was this response helpful?
+                  <div style={{display: "inline"}}>
+                  <i className="fa-solid fa-thumbs-up thumbs" onClick={(e) => handleLikes(e)}/>
+                  <i className="fa-solid fa-thumbs-down thumbs" onClick={(e) => handleUnLikes(e)} />
+                  </div>
+
+                </div>
             </div>
+                
+            <div>
+                
+              </div></>
           );
         } else {
           finalBody = <div className="c-chat__message"> {body.data} </div>;
@@ -95,8 +121,9 @@ const Chat = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [questionSubmitted, setQuestionSubmitted] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
-  const [recordedAudio, setRecordedAudio] = useState<any>(null);
-  const mediaRecorder = useRef<any>(null);
+  const [recordedAudio, setRecordedAudio] = useState(null);
+  const mediaRecorder = useRef(null);
+  const [emailReceived, setEmailReceived] = useState(false);
 
   const socket = socketIOClient('http://localhost:5000/chat');
 
@@ -104,12 +131,18 @@ const Chat = () => {
     start();
     socket.on('response', (response) => {
       setQuestionSubmitted(false);
+
+      response = JSON.parse(response);
       console.log(response);
+      
       updateMessage({
         author: 'bot', body: {
           type: MessageType.Text,
-          data: response
-        }, timeout: 1000
+          data: response.data,
+          
+        },
+        id: response.id,
+         timeout: 1000
       });
     });
 
@@ -160,7 +193,7 @@ const Chat = () => {
       author: 'bot', body: {
         type: MessageType.Text,
         data: "..."
-      }, timeout: 1000
+      }, id: "", timeout: 1000
     });
     if (message.type == MessageType.Text) {
       socket.emit("message", message.data);
@@ -169,7 +202,12 @@ const Chat = () => {
     } // 2 seconds delay before sending the message
   };
 
-  const handleSubmit = (e : any) => {
+  const isValidEmail = (email) => {
+    const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return regex.test(email);
+  }
+
+  const handleSubmit = (e) => {
     e.preventDefault();
     const input = e.target.querySelector('input');
 
@@ -179,8 +217,35 @@ const Chat = () => {
         type: MessageType.Text,
         data: input.value
       },
+      id: "",
       timeout: 1000
     });
+
+    if (!emailReceived) {
+      const email = input.value;
+      let body: string;
+
+      if (isValidEmail(email)) {
+        body = "Thank you for providing your email. I am here to assist you!";
+        socket.emit("email", email);
+        setEmailReceived(true)
+      } else {
+        body = "Please provide a valid email to continue..";
+      }
+
+      addMessage({
+        author: 'bot',
+        body: {
+          type: MessageType.Text,
+          data: body,
+        },
+        id: "",
+        timeout: 500
+      })
+
+      e.target.reset();
+      return;
+    }
 
     sendMessage({
       type: MessageType.Text,
@@ -230,6 +295,7 @@ const Chat = () => {
               setRecordedAudio(base64Audio);
               addMessage({
                 author: "human",
+                id: "",
                 timeout: 1000,
                 body: {
                   type: MessageType.Audio,
@@ -264,6 +330,25 @@ const Chat = () => {
     // if(questionSubmitted) {
     //   return;
     // }
+    var body;
+    if (!emailReceived) {
+
+      body = "Please provide a valid email to continue..";
+
+      addMessage({
+        author: 'bot',
+        id: "",
+        body: {
+          type: MessageType.Text,
+          data: body,
+        },
+        timeout: 500
+      })
+      setIsRecording(false)
+
+      return
+    }
+
     if (mediaRecorder.current && mediaRecorder.current.state === 'recording') {
       mediaRecorder.current.stop();
       console.log(mediaRecorder)
@@ -278,49 +363,42 @@ const Chat = () => {
   }
 
   return (
-    <div className={cssClass.join(' ')}>
-      <ul className="c-chat__list">
-        {messages.map((message, index) => <Message key={index} data={message} />)}
-      </ul>
-      <form className="c-chat__form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="input"
-          placeholder="Type your message here..."
-          autoFocus
-          autoComplete="off"
-          required
-          disabled={questionSubmitted}
-        />
-      </form>
+    <>
+      <div className={cssClass.join(' ')}>
 
-      <div className='' onClick={startRecording}>
-
-        <div className="frame">
-          <input type="checkbox" name="toggle" id="record-toggle" checked={isRecording} disabled={questionSubmitted} />
-
-          <svg viewBox="0 0 100 100">
-            <circle cx="50%" cy="50%" r="45" className="circle-svg" />
-          </svg>
-
-          <div className="mic">
-            <div className="mic__head"></div>
-            <div className="mic__neck"></div>
-            <div className="mic__leg"></div>
+        <ul className="c-chat__list">
+          {messages.map((message, index) => <Message key={index} data={message} />)}
+        </ul>
+        <form className="c-chat__form" onSubmit={handleSubmit}>
+          <div className='flex'>
+            <input
+              type="text"
+              name="input"
+              placeholder="Type your message here..."
+              autoFocus
+              autoComplete="off"
+              required
+              disabled={questionSubmitted}
+            />
+            <div className='' onClick={startRecording}>
+              {!isRecording && (
+                <i className="fa-solid fa-microphone chat-mic" />
+              )}
+              {isRecording && (
+                <div className="c-chat__message typing chat-mic chat-mic-dots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              )}
+            </div>
           </div>
+        </form>
 
-          <div className="recording">
-            <div className="round"></div>
-            <div className="round"></div>
-            <div className="round"></div>
-          </div>
-
-          <label htmlFor="record-toggle" className="toggle-label"></label>
-        </div>
-
-
+        
       </div>
-    </div>
+      <div className='disclaimer'>Disclaimer: AI chat bots provide automated responses and may produce inaccurate information.</div>
+    </>
   );
 };
 

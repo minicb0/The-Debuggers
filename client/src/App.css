@@ -3,3 +3,11 @@
     margin: 0px;
     box-sizing: border-box;
 }
+
+.netcon-img {
+    width: 80px;
+}
+
+.netcon {
+    margin: auto;
+}
