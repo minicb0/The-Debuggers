@@ -95,8 +95,8 @@ const Chat = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [questionSubmitted, setQuestionSubmitted] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
-  const [recordedAudio, setRecordedAudio] = useState(null);
-  const mediaRecorder = useRef(null);
+  const [recordedAudio, setRecordedAudio] = useState<any>(null);
+  const mediaRecorder = useRef<any>(null);
 
   const socket = socketIOClient('http://localhost:5000/chat');
 
@@ -135,7 +135,7 @@ const Chat = () => {
     setMessages((prevMessages) => [...prevMessages, item]);
     const items = document.querySelectorAll('li');
     const lastItem = items[items.length - 1];
-    document.querySelector('.c-chat__list').scrollTop = lastItem?.offsetTop + lastItem?.clientHeight;
+    document.querySelector('.c-chat__list')!.scrollTop = lastItem?.offsetTop + lastItem?.clientHeight;
   };
 
   const updateMessage = (item: ChatMessage) => {
@@ -146,7 +146,7 @@ const Chat = () => {
     });
     const items = document.querySelectorAll('li');
     const lastItem = items[items.length - 1];
-    document.querySelector('.c-chat__list').scrollTop = lastItem?.offsetTop + lastItem?.clientHeight;
+    document.querySelector('.c-chat__list')!.scrollTop = lastItem?.offsetTop + lastItem?.clientHeight;
   };
 
   const sendMessage = (message: Body) => {
@@ -169,7 +169,7 @@ const Chat = () => {
     } // 2 seconds delay before sending the message
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e : any) => {
     e.preventDefault();
     const input = e.target.querySelector('input');
 
@@ -190,8 +190,8 @@ const Chat = () => {
     e.target.reset();
   };
 
-  const sendVoiceToBackend = (x: any) => {
-
+  class CodePostal {
+    async save() { }
   }
 
   const startRecording = () => {
@@ -208,9 +208,9 @@ const Chat = () => {
         .then((stream) => {
           console.log("HERE NOW")
           mediaRecorder.current = new MediaRecorder(stream);
-          const audioChunks = [];
+          const audioChunks: CodePostal[] = [];
 
-          mediaRecorder.current.ondataavailable = (e) => {
+          mediaRecorder.current.ondataavailable = (e : any) => {
             if (e.data.size > 0) {
               audioChunks.push(e.data);
             }
@@ -222,7 +222,7 @@ const Chat = () => {
             // Convert audioBlob to base64
             const reader = new FileReader();
             reader.onload = (event) => {
-              const base64Audio = event.target.result;
+              const base64Audio = event.target!.result;
               console.log("NOW UPDATING")
               console.log(base64Audio);
               console.log(typeof (base64Audio));
@@ -315,7 +315,7 @@ const Chat = () => {
             <div className="round"></div>
           </div>
 
-          <label for="record-toggle" className="toggle-label"></label>
+          <label htmlFor="record-toggle" className="toggle-label"></label>
         </div>
 
 
