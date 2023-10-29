@@ -1,0 +1,346 @@
+{
+    "data": [
+        {
+            "title": "Netcon Technologies",
+            "paragraphs": [
+                {
+                    "context": "Netcon Technologies is a technology services provider that specializes in various areas, including digital transformation, cloud services, data centers, cybersecurity, data science, and AI/ML. They have earned the trust of organizations like IIT-Bombay and have a reputation for tailoring technology solutions to specific industries.",
+                    "qas": [
+                        {
+                            "question": "What services does Netcon Technologies offer?",
+                            "answers": [
+                                {
+                                    "text": "Netcon Technologies offers services related to digital transformation, cloud, data centers, cybersecurity, data science, and AI/ML.",
+                                    "answer_start": 82
+                                }
+                            ]
+                        },
+                        {
+                            "question": "How does Netcon Technologies describe its approach to digital transformation?",
+                            "answers": [
+                                {
+                                    "text": "Netcon Technologies offers tailor-made digital transformation solutions designed specifically for each industry.",
+                                    "answer_start": 161
+                                }
+                            ]
+                        },
+                        {
+                            "question": "What are some of the core technology solutions Netcon Technologies offers under the 'AI/ML' category?",
+                            "answers": [
+                                {
+                                    "text": "Netcon Technologies offers various AI/ML solutions to cater to specific business needs.",
+                                    "answer_start": 287
+                                }
+                            ]
+                        },
+                        {
+                            "question": "What is the 'Connected and comprehensive' suite of tools offered by Netcon Technologies?",
+                            "answers": [
+                                {
+                                    "text": "The 'Connected and comprehensive' suite of tools aims to bring together various aspects of a business and address industry-specific use cases with technology solutions.",
+                                    "answer_start": 386
+                                }
+                            ]
+                        },
+                        {
+                            "question": "Can you provide more information about the 'Technology partner, trusted by pioneering enterprise players' section?",
+                            "answers": [
+                                {
+                                    "text": "This section may contain information about Netcon Technologies' partnerships with enterprise players.",
+                                    "answer_start": 518
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Trusted by the Best",
+            "paragraphs": [
+                {
+                    "context": "Netcon Technologies has earned the trust of renowned organizations, including L&T, AAI, Mu-Sigma, SIEMENS, BIAL, ELGi, Manipal Hospital, and MAK. They have a wide industry presence and cater to sectors such as airports, healthcare, education, and manufacturing.",
+                    "qas": [
+                        {
+                            "question": "Which organizations trust Netcon Technologies for their digital transformation initiatives?",
+                            "answers": [
+                                {
+                                    "text": "IIT-Bombay is one of the organizations that trust Netcon Technologies for their digital transformation initiatives.",
+                                    "answer_start": 0
+                                }
+                            ]
+                        },
+                        {
+                            "question": "Can you name some of the organizations that trust Netcon Technologies?",
+                            "answers": [
+                                {
+                                    "text": "Some of the organizations that trust Netcon Technologies include L&T, AAI, Mu-Sigma, SIEMENS, BIAL, ELGi, Manipal Hospital, and MAK.",
+                                    "answer_start": 48
+                                }
+                            ]
+                        },
+                        {
+                            "question": "What industries does Netcon Technologies cater to?",
+                            "answers": [
+                                {
+                                    "text": "Netcon Technologies caters to industries such as airports, healthcare, education, and manufacturing.",
+                                    "answer_start": 123
+                                }
+                            ]
+                        },
+                        {
+                            "question": "How does Netcon Technologies help airports?",
+                            "answers": [
+                                {
+                                    "text": "Netcon Technologies helps airports by reinventing and reinforcing their airport systems to make travelers' journeys hassle-free.",
+                                    "answer_start": 161
+                                }
+                            ]
+                        },
+                        {
+                            "question": "What is Netcon Technologies' approach to healthcare solutions?",
+                            "answers": [
+                                {
+                                    "text": "Netcon Technologies provides solutions that empower patients, staff, and everyone involved by switching from archaic to cohesive, next-gen solutions.",
+                                    "answer_start": 340
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Sustainability and Energy Usage",
+            "paragraphs": [
+                {
+                    "context": "Netcon Technologies has a strong focus on sustainability and strives to use natural and sustainable sources of energy, reduce power consumption, and contribute to sustainability for the greater good.",
+                    "qas": [
+                        {
+                            "question": "What is Netcon Technologies' approach to sustainability?",
+                            "answers": [
+                                {
+                                    "text": "Netcon Technologies is committed to sustainability by using natural and sustainable sources of energy wherever possible and minimizing power consumption.",
+                                    "answer_start": 0
+                                }
+                            ]
+                        },
+                        {
+                            "question": "What are the key areas of focus for sustainability at Netcon Technologies?",
+                            "answers": [
+                                {
+                                    "text": "Netcon Technologies focuses on using natural energy sources, minimizing power consumption, and contributing to sustainability.",
+                                    "answer_start": 75
+                                }
+                            ]
+                        },
+                        {
+                            "question": "How does Netcon Technologies contribute to sustainability efforts?",
+                            "answers": [
+                                {
+                                    "text": "Netcon Technologies is committed to contributing to sustainability for the greater good by embracing sustainable innovation.",
+                                    "answer_start": 165
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Case Studies",
+            "paragraphs": [
+                {
+                    "context": "Netcon Technologies features several case studies on their website, showcasing their successful partnerships and projects with organizations such as Bangalore Airport, ISB, and Manipal Hospital.",
+                    "qas": [
+                        {
+                            "question": "Can you provide an example of a case study involving Netcon Technologies?",
+                            "answers": [
+                                {
+                                    "text": "Netcon Technologies helped Bangalore Airport adapt to the demanding needs of passengers, airlines, and operators by designing and implementing an automated network.",
+                                    "answer_start": 0
+                                }
+                            ]
+                        },
+                        {
+                            "question": "Can you provide details about a case study involving Manipal Hospital and Netcon Technologies?",
+                            "answers": [
+                                {
+                                    "text": "Netcon Technologies helps Manipal hospital in its journey of designing and implementing an immune network with an end-to-end Cyber Security framework.",
+                                    "answer_start": 259
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Services and Offerings",
+            "paragraphs": [
+                {
+                    "context": "Netcon Technologies offers a range of services, including consultation services, professional services, managed services, and an exclusive subscription model called NXaaS (Anything as a Service).",
+                    "qas": [
+                        {
+                            "question": "What types of services does Netcon Technologies offer for consultation?",
+                            "answers": [
+                                {
+                                    "text": "Netcon Technologies offers consultation services to help define the right strategy for clients to achieve their goals.",
+                                    "answer_start": 79
+                                }
+                            ]
+                        },
+                        {
+                            "question": "What are the services offered under Netcon Technologies' Managed Services?",
+                            "answers": [
+                                {
+                                    "text": "Netcon Technologies' Managed Services include Proactive Monitoring, Incident Reporting, Inventory Management, Security Monitoring, and Escalation Management.",
+                                    "answer_start": 240
+                                }
+                            ]
+                        },
+                        {
+                            "question": "What is NXaaS, and how does it work at Netcon Technologies?",
+                            "answers": [
+                                {
+                                    "text": "NXaaS (Anything as a Service) is a subscription model offered by Netcon Technologies, allowing clients to access all their services on a pay-as-you-go basis.",
+                                    "answer_start": 401
+                                }
+                            ]
+                        },
+                        {
+                            "question": "How can I book a free consultation with Netcon Technologies?",
+                            "answers": [
+                                {
+                                    "text": "You can book a free consultation with Netcon Technologies through their website.",
+                                    "answer_start": 529
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Transforming Industries",
+            "paragraphs": [
+                {
+                    "context": "Netcon Technologies has an impressive track record, having transformed 14 major airports, revolutionized 15 smart cities, and installed radical solutions in 75 higher education campuses.",
+                    "qas": [
+                        {
+                            "question": "How many large airports has Netcon Technologies transformed?",
+                            "answers": [
+                                {
+                                    "text": "Netcon Technologies has transformed 14 major airports in the country.",
+                                    "answer_start": 0
+                                }
+                            ]
+                        },
+                        {
+                            "question": "How many smart cities have experienced positive changes due to Netcon Technologies?",
+                            "answers": [
+                                {
+                                    "text": "Netcon Technologies has revolutionized 15 smart cities by providing better connectivity, safety, and unified systems.",
+                                    "answer_start": 72
+                                }
+                            ]
+                        },
+                        {
+                            "question": "What is the significance of the number '75' on the website?",
+                            "answers": [
+                                {
+                                    "text": "Netcon Technologies has installed radical solutions in 75 higher education campuses.",
+                                    "answer_start": 134
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Automation and Healthcare",
+            "paragraphs": [
+                {
+                    "context": "Netcon Technologies has been instrumental in automating more than 50 manufacturing companies for their pressing digital needs. They are also a trusted partner for top healthcare institutions.",
+                    "qas": [
+                        {
+                            "question": "What kind of companies benefit from Netcon Technologies' automation services?",
+                            "answers": [
+                                {
+                                    "text": "Netcon Technologies has been instrumental in automating more than 50 manufacturing companies for their digital needs.",
+                                    "answer_start": 0
+                                }
+                            ]
+                        },
+                        {
+                            "question": "How does Netcon Technologies support healthcare providers?",
+                            "answers": [
+                                {
+                                    "text": "Top healthcare institutions trust Netcon Technologies when it comes to transforming their digital journey.",
+                                    "answer_start": 259
+                                }
+                            ]
+                        },
+                        {
+                            "question": "How can I connect with Netcon Technologies on LinkedIn or Twitter?",
+                            "answers": [
+                                {
+                                    "text": "You can follow or connect with Netcon Technologies on LinkedIn and Twitter by visiting their respective profiles on these social media platforms.",
+                                    "answer_start": 541
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Contact Information and Engagement",
+            "paragraphs": [
+                {
+                    "context": "Netcon Technologies provides contact information for inquiries, including an email address and phone number. They are also active on LinkedIn and Twitter, and visitors can subscribe to their newsletter.",
+                    "qas": [
+                        {
+                            "question": "How can I get in touch with Netcon Technologies for general inquiries?",
+                            "answers": [
+                                {
+                                    "text": "You can contact Netcon Technologies via email at info@netcon.in or by phone at +91 99524 00291.",
+                                    "answer_start": 0
+                                }
+                            ]
+                        },
+                        {
+                            "question": "What is the process for subscribing to Netcon Technologies' newsletter?",
+                            "answers": [
+                                {
+                                    "text": "You can subscribe to Netcon Technologies' newsletter by providing your email address, as indicated on the website.",
+                                    "answer_start": 86
+                                }
+                            ]
+                        },
+                        {
+                            "question": "What is the purpose of the 'Netcon Technologies' logo on the website?",
+                            "answers": [
+                                {
+                                    "text": "The Netcon Technologies logo represents their brand and identity.",
+                                    "answer_start": 253
+                                }
+                            ]
+                        },
+                        {
+                            "question": "What is the copyright year mentioned on the website?",
+                            "answers": [
+                                {
+                                    "text": "The copyright year mentioned on the website is 2022.",
+                                    "answer_start": 289
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+

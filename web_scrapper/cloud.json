@@ -1,0 +1,283 @@
+{
+    "data": [
+	{
+	    "title": "Netcon Technologies Cloud Services",
+	    "paragraphs": [
+		{
+		    "context": "Netcon Technologies is known for providing cloud solutions that help businesses optimize costs and improve performance. They offer expertise to manage every part and complexity of your cloud adoption journey with confidence. Netcon prides itself on ensuring that you reduce your cloud spending. They offer a range of cloud solutions, including public, private, hybrid, multi-cloud, and hyper-scale models, tailored to your business needs.",
+		    "qas": [
+		        {
+		            "question": "What is Netcon Technologies known for?",
+		            "answers": [
+		                {
+		                    "text": "Netcon Technologies is known for providing cloud solutions that help businesses optimize costs and improve performance.",
+		                    "answer_start": 0
+		                }
+		            ]
+		        },
+		        {
+		            "question": "How can Netcon help with cloud adoption?",
+		            "answers": [
+		                {
+		                    "text": "Netcon offers expertise to manage every part and complexity of your cloud adoption journey with confidence.",
+		                    "answer_start": 83
+		                }
+		            ]
+		        },
+		        {
+		            "question": "What is Netcon's approach to cost optimization?",
+		            "answers": [
+		                {
+		                    "text": "Netcon prides itself on ensuring that you reduce your cloud spending.",
+		                    "answer_start": 196
+		                }
+		            ]
+		        },
+		        {
+		            "question": "What types of cloud solutions does Netcon offer?",
+		            "answers": [
+		                {
+		                    "text": "Netcon offers a range of cloud solutions, including public, private, hybrid, multi-cloud, and hyper-scale models, tailored to your business needs.",
+		                    "answer_start": 299
+		                }
+		            ]
+		        }
+		    ]
+		}
+	    ]
+	},
+	{
+	    "title": "Cloud Migration and Modernization",
+	    "paragraphs": [
+		{
+		    "context": "Cloud migration is essential for improving the efficiency and resilience of IT systems and enabling businesses to innovate faster. Netcon's certified cloud migration consultants help with agile, efficient, secure, and predictable cloud migration and optimization. After cloud migration, it's important to modernize applications, infrastructure, and data architecture to unlock the full potential of the cloud. Netcon assists in crafting a modernization program to capture the long-term value of the cloud, avoid common pitfalls, and accelerate the return on investment.",
+		    "qas": [
+		        {
+		            "question": "Why is cloud migration important?",
+		            "answers": [
+		                {
+		                    "text": "Cloud migration is essential for improving the efficiency and resilience of IT systems and enabling businesses to innovate faster.",
+		                    "answer_start": 0
+		                }
+		            ]
+		        },
+		        {
+		            "question": "How does Netcon assist with cloud migration and optimization?",
+		            "answers": [
+		                {
+		                    "text": "Netcon's certified cloud migration consultants help with agile, efficient, secure, and predictable cloud migration and optimization.",
+		                    "answer_start": 83
+		                }
+		            ]
+		        },
+		        {
+		            "question": "What comes after cloud migration?",
+		            "answers": [
+		                {
+		                    "text": "After cloud migration, it's important to modernize applications, infrastructure, and data architecture to unlock the full potential of the cloud.",
+		                    "answer_start": 232
+		                }
+		            ]
+		        },
+		        {
+		            "question": "How does Netcon help with cloud modernization and acceleration?",
+		            "answers": [
+		                {
+		                    "text": "Netcon assists in crafting a modernization program to capture the long-term value of the cloud, avoid common pitfalls, and accelerate the return on investment.",
+		                    "answer_start": 360
+		                }
+		            ]
+		        }
+		    ]
+		}
+	    ]
+	},
+	{
+	    "title": "Running SAP Systems on the Cloud",
+	    "paragraphs": [
+		{
+		    "context": "Running SAP systems on the cloud provides benefits such as flexibility, security, and cost control. Transitioning SAP to the cloud can bring hidden, unexpected, and expensive challenges, which Netcon can help you address.",
+		    "qas": [
+		        {
+		            "question": "What are the benefits of running SAP systems on the cloud?",
+		            "answers": [
+		                {
+		                    "text": "Running SAP systems on the cloud provides benefits such as flexibility, security, and cost control.",
+		                    "answer_start": 0
+		                }
+		            ]
+		        },
+		        {
+		            "question": "What challenges can arise when transitioning SAP to the cloud?",
+		            "answers": [
+		                {
+		                    "text": "Transitioning SAP to the cloud can bring hidden, unexpected, and expensive challenges, which Netcon can help you address.",
+		                    "answer_start": 72
+		                }
+		            ]
+		        }
+		    ]
+		}
+	    ]
+	},
+	{
+	    "title": "Backup and Disaster Recovery",
+	    "paragraphs": [
+		{
+		    "context": "Backup and disaster recovery are crucial for business continuity, and Netcon offers solutions that align with your business needs. Netcon can help you create effective cloud-based plans that minimize downtime and reduce capital investments and maintenance costs.",
+		    "qas": [
+		        {
+		            "question": "Why is backup and disaster recovery important?",
+		            "answers": [
+		                {
+		                    "text": "Backup and disaster recovery are crucial for business continuity, and Netcon offers solutions that align with your business needs.",
+		                    "answer_start": 0
+		                }
+		            ]
+		        },
+		        {
+		            "question": "How can Netcon help with backup and disaster recovery planning?",
+		            "answers": [
+		                {
+		                    "text": "Netcon can help you create effective cloud-based plans that minimize downtime and reduce capital investments and maintenance costs.",
+		                    "answer_start": 73
+		                }
+		            ]
+		        }
+		    ]
+		}
+	    ]
+	},
+	{
+	    "title": "Netcon Cloud Insights",
+	    "paragraphs": [
+		{
+		    "context": "Netcon Cloud Insights provides visibility into your total cloud consumption, allowing you to monitor, troubleshoot, and optimize resources and applications across your technology stack.",
+		    "qas": [
+		        {
+		            "question": "What is Netcon Cloud Insights?",
+		            "answers": [
+		                {
+		                    "text": "Netcon Cloud Insights provides visibility into your total cloud consumption, allowing you to monitor, troubleshoot, and optimize resources and applications across your technology stack.",
+		                    "answer_start": 0
+		                }
+		            ]
+		        }
+		    ]
+		}
+	    ]
+	},
+	{
+	    "title": "Netcon's Successful Projects and Customer Feedback",
+	    "paragraphs": [
+		{
+		    "context": "Netcon has administered projects like CIAL's 'Private Cloud Journey,' implemented advanced cloud infrastructure for IIMK's LMS Moodle, and revamped city-surveillance systems for civic bodies. Customers have praised Netcon for its specialized experts, technical capability, support, and industry-acceptable solutions.",
+		    "qas": [
+		        {
+		            "question": "Can you provide examples of Netcon's successful projects?",
+		            "answers": [
+		                {
+		                    "text": "Netcon has administered projects like CIAL's 'Private Cloud Journey,' implemented advanced cloud infrastructure for IIMK's LMS Moodle, and revamped city-surveillance systems for civic bodies.",
+		                    "answer_start": 0
+		                }
+		            ]
+		        },
+		        {
+		            "question": "What do customers say about Netcon's services?",
+		            "answers": [
+		                {
+		                    "text": "Customers have praised Netcon for its specialized experts, technical capability, support, and industry-acceptable solutions.",
+		                    "answer_start": 167
+		                }
+		            ]
+		        }
+		    ]
+		}
+	    ]
+	},
+	{
+	    "title": "Netcon's Services and Expertise",
+	    "paragraphs": [
+		{
+		    "context": "Netcon offers consultation services provided by a team of certified cloud experts to help define the right cloud strategy for your business. Their professional services team brings expertise for designing and building cloud solutions across various cloud platforms. Netcon's managed services team manages, operates, optimizes, and innovates your day-to-day cloud operations to ensure your applications are performing at their best.",
+		    "qas": [
+		        {
+		            "question": "What consultation services does Netcon offer?",
+		            "answers": [
+		                {
+		                    "text": "Netcon offers consultation services provided by a team of certified cloud experts to help define the right cloud strategy for your business.",
+		                    "answer_start": 0
+		                }
+		            ]
+		        },
+		        {
+		            "question": "What are Netcon's professional services focused on?",
+		            "answers": [
+		                {
+		                    "text": "Netcon's professional services team brings expertise for designing and building cloud solutions across various cloud platforms.",
+		                    "answer_start": 91
+		                }
+		            ]
+		        },
+		        {
+		            "question": "What are managed services by Netcon?",
+		            "answers": [
+		                {
+		                    "text": "Netcon's managed services team manages, operates, optimizes, and innovates your day-to-day cloud operations to ensure your applications are performing at their best.",
+		                    "answer_start": 195
+		                }
+		            ]
+		        }
+		    ]
+		}
+	    ]
+	},
+	{
+	    "title": "Netcon's Specialized Services and Open Source Approach",
+	    "paragraphs": [
+		{
+		    "context": "Netcon's Cloud Security Services help secure your IT environments across all clouds, detect and respond to threats, address compliance requirements, and minimize damage from breaches. Netcon's API Integration Services focus on building an integration strategy that works for the current and future state of your business, designed according to best practices. Netcon boasts 15 years of experience in handling large, complex IT infrastructure projects across cloud platforms, a product development focus, and a commitment to open source in cloud strategy.",
+		    "qas": [
+		        {
+		            "question": "What do Netcon's Cloud Security Services cover?",
+		            "answers": [
+		                {
+		                    "text": "Netcon's Cloud Security Services help secure your IT environments across all clouds, detect and respond to threats, address compliance requirements, and minimize damage from breaches.",
+		                    "answer_start": 0
+		                }
+		            ]
+		        },
+		        {
+		            "question": "What is the focus of Netcon's API Integration Services?",
+		            "answers": [
+		                {
+		                    "text": "Netcon's API Integration Services focus on building an integration strategy that works for the current and future state of your business, designed according to best practices.",
+		                    "answer_start": 132
+		                }
+		            ]
+		        },
+		        {
+		            "question": "What are some of Netcon's strengths as a Cloud Team?",
+		            "answers": [
+		                {
+		                    "text": "Netcon boasts 15 years of experience in handling large, complex IT infrastructure projects across cloud platforms, a product development focus, and a commitment to open source in cloud strategy.",
+		                    "answer_start": 263
+		                }
+		            ]
+		        },
+		        {
+		            "question": "What does Netcon's latest thinking cover?",
+		            "answers": [
+		                {
+		                    "text": "Netcon's latest thinking includes discussions on cloud security, successful hybrid cloud strategies for hospitals, and the imperative of cloud optimization.",
+		                    "answer_start": 394
+		                }
+		            ]
+		        }
+		    ]
+		}
+	    ]
+	}
+    ]
+}
+
