@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import axios from 'axios'
 // import { ReactMic } from 'react-mic';
 import Typewriter from 'typewriter-effect';
 import socketIOClient from 'socket.io-client';
@@ -17,7 +18,7 @@ interface Body {
 interface ChatMessage {
   author: string,
   body: Body,
-  id: any,
+  id: string,
   timeout: number
 }
 
@@ -30,20 +31,61 @@ const initialMessages: ChatMessage[] = [
   }
 ];
 
+const url = "http://192.168.104.29:5000";
+
 const Message = ({ data }: { data: ChatMessage }) => {
-  const { author, body } = data;
+  const { author, body, id } = data;
   console.log(data);
+  console.log(id)
+
+  const sendFeedback = (feedback) => {
+    console.log('====================================');
+    console.log("sending: " + feedback + " feedback");
+    console.log('====================================');
+
+    const body = {
+      "chat_id": id,
+      "feedback": feedback
+    }   
+
+    axios.post(url + "/feedback/", body);
+  }
 
   const handleLikes = (e) => {
     e.target.closest('div').childNodes[1].classList.remove("red")
-    e.target.classList.add("green")
 
-    console.log(data);
+    let feedback: string;
+
+    if (e.target.classList.contains("green")) {
+      e.target.classList.remove("green");
+      feedback = "neutral"
+    } else {
+      e.target.classList.add("green")
+      feedback = "positive";
+    }
+
+    if (id != "") {
+      sendFeedback(feedback);
+    }
   }
 
   const handleUnLikes = (e) => {
-    e.target.classList.add("red")
+    // e.target.classList.add("red")
     e.target.closest('div').childNodes[0].classList.remove("green")
+
+    let feedback: string;
+
+    if (e.target.classList.contains("red")) {
+      e.target.classList.remove("red");
+      feedback = "neutral"
+    } else {
+      e.target.classList.add("red")
+      feedback = "negetive";
+    }
+
+    if (id != "") {
+      sendFeedback(feedback)
+    }
   }
 
   let finalBody;
@@ -125,10 +167,17 @@ const Chat = () => {
   const mediaRecorder = useRef(null);
   const [emailReceived, setEmailReceived] = useState(false);
 
-  const socket = socketIOClient('http://localhost:5000/chat');
+  const socket = socketIOClient(url + '/chat');
 
   useEffect(() => {
     start();
+
+    // document.addEventListener("keypress", (e) => {
+    //   if(e.keyCode == 80) {
+    //     setIsRecording(!isRecording)
+    //   }
+    // })
+
     socket.on('response', (response) => {
       setQuestionSubmitted(false);
 
@@ -139,7 +188,6 @@ const Chat = () => {
         author: 'bot', body: {
           type: MessageType.Text,
           data: response.data,
-          
         },
         id: response.id,
          timeout: 1000

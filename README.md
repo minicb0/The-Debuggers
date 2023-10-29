@@ -5,6 +5,11 @@ This repository serves as the dedicated space for our contributions to the Trans
 
 ## The Problem Statement by Netcon
 Create a cutting-edge NLP-based AI virtual assistant to interact with users. The goal is to develop a system that not only understands and responds to user queries but also provides a personalized experience. Incorporate voice recognition technology to enhance the assistant's ability to process spoken commands and questions.
+
+## Demo Video, Presentation and ML Model:
+
+Drive Link - [https://drive.google.com/drive/folders/1G2nFJJZfAxYumeBHswDUNPAl3IRBWSi1?usp=sharing](https://drive.google.com/drive/folders/1G2nFJJZfAxYumeBHswDUNPAl3IRBWSi1?usp=sharing)
+
 ## What it does
 
 - Performs real-time tasks as a user-friendly virtual assistant.
@@ -38,7 +43,15 @@ source ./venv/bin/activate
 ```
 
 #### Install dependencies: 
-```pip install -r requirements.txt```
+```
+pip install --upgrade pip
+pip install -r requirements.txt
+pip install farm-haystack[colab,inference]
+```
+
+### Download ML Model
+
+Visit the given drive link and download the `dbert.pkl` and move it to `/server/app/nlp_engine/pickle/dbert.pkl`
 
 #### To Start Server:
 ```python main.py``` 

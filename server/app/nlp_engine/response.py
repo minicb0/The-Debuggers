@@ -1,15 +1,15 @@
 import pickle
-import torch
+# import torch
 from haystack.pipelines import ExtractiveQAPipeline
 
 
 def get_response(query):
-    with open("app/nlp_engine/pickle/distilbert_updated.pkl", "rb") as model_file:
+    with open("app/nlp_engine/pickle/dbert.pkl", "rb") as model_file:
         # pipeline_components = torch.load(model_file, map_location=torch.device('cpu'), weights_only=False)
         # pipeline_components = {}
         # torch.save(pipeline_components, model_file)
 
-        pipeline_components = pickle.load(model_file).cuda()
+        pipeline_components = pickle.load(model_file)
         retriever = pipeline_components["retriever"]
         reader = pipeline_components["reader"]
 
