@@ -1,6 +1,6 @@
 import openai
 
-api_key = "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"
+api_key = ""
 
 with open("insights.txt", "r", encoding="utf-8") as insights_file:
     insights = insights_file.read()
