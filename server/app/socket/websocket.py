@@ -1,5 +1,5 @@
 import logging
-
+import json
 from flask import request, jsonify
 from flask_socketio import Namespace, SocketIO
 from app.nlp_engine.response import get_response
@@ -28,16 +28,17 @@ class ChatClient(Namespace):
 
     def on_message(self, message: str):
         self._logger.info(f"{self} sent message: {message}")
-        english, src = translateMessage(message)
-        self._logger.info(f"language detected: {src}")
-        results = get_response(english)
-        self._logger.info(f"response of {message}: {results}")
-        response, _ = translateMessage(results, to=src)
-        chat = Chats(email=self.email, prompt=message, reply=message[::-1], feedback="neutral")
-        chat.save()
-        self.emit("response", jsonify({
-            "id": chat.pk,
-            "data": response
+        # english, src = translateMessage(message)
+        # self._logger.info(f"language detected: {src}")
+        results = get_response(message)
+        # self._logger.info(f"response of {message}: {results}")
+        # response, _ = translateMessage(results, to=src)
+        # chat = Chats(email=self.email, prompt=message, reply=message[::-1], feedback="neutral")
+        # chat.save()
+        # self._logger.info(str(chat.pk))
+        self.emit("response", json.dumps({
+            "id": 1,
+            "data": results
         }))
 
     def on_voice(self, data: str):
@@ -49,8 +50,8 @@ class ChatClient(Namespace):
         response, _ = translateMessage(results, to=src)
         chat = Chats(email=self.email, prompt=message, reply=response, feedback="neutral")
         chat.save()
-        self.emit("response", jsonify({
-            "id": chat.pk,
+        self.emit("response", json.dumps({
+            "id": str(chat.pk),
             "data": response
         }))
         self._logger.info(f"{self} src: {src}, message: {message}, english: {english}, results: {results}, response: {response}")

@@ -28,12 +28,9 @@ logging.basicConfig(
 )
 logging.getLogger("haystack").setLevel(logging.INFO)
 
-doc_dir = "app/nlp_engine/data/fine_tune_data"
+doc_dir = "app/nlp_engine/data/qa_data"
 
-fetch_archive_from_http(
-    url="https://s3.eu-central-1.amazonaws.com/deepset.ai-farm-qa/datasets/documents/wiki_gameofthrones_txt1.zip",
-    output_dir=doc_dir,
-)
+output_dir=doc_dir,
 
 files_to_index = [doc_dir + "/" + f for f in os.listdir(doc_dir)]
 document_store = InMemoryDocumentStore(use_bm25=True)
@@ -41,11 +38,11 @@ indexing_pipeline = TextIndexingPipeline(document_store)
 indexing_pipeline.run_batch(file_paths=files_to_index)
 
 retriever = BM25Retriever(document_store=document_store)
-reader = FARMReader(model_name_or_path="deepset/roberta-base-squad2", use_gpu=True)
+reader = FARMReader(model_name_or_path="distilbert-base-uncased-distilled-squad", use_gpu=True)
 pipe = ExtractiveQAPipeline(reader, retriever)
 
 prediction = pipe.run(
-    query="Who is the father of Arya Stark?",
+    query="",
     params={"Retriever": {"top_k": 10}, "Reader": {"top_k": 5}},
 )
 
@@ -55,7 +52,7 @@ print_answers(
     prediction, details="minimum"
 )  ## Choose from `minimum`, `medium`, and `all`
 
-file_path = "/content/drive/MyDrive/PMSM/roberta.pkl"
+file_path = "app/nlp_engine/pickles/distilbert.pkl"
 
 # Create a dictionary to hold the components of the pipeline
 pipeline_components = {"retriever": retriever, "reader": reader}
